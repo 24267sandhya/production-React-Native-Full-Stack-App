@@ -1,4 +1,4 @@
-const express = require('express');
+, resconst express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const colors = require('colors');
@@ -24,7 +24,7 @@ app.use('/api/v1/auth', require('./routes/userRoutes'));
 app.use('/api/v1/post', require('./routes/postRoutes'));
 
 // HOME
-app.get("/", () => {
+app.get("/", (req, res) => {
     res.status(200).send({
         "success": true,
         "msg": "Node Server Running"
